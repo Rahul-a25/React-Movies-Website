@@ -1,0 +1,71 @@
+.mainHome{
+    width: 100%;
+    height: 100vh;
+    /* border: 2px solid red; */
+    display: flex;
+}
+.sidebar{
+   width: 20%;
+    height: 100vh;
+   /* border: 2px solid black; */
+}
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 25px;
+    align-items: center;
+    background-color: black;
+   
+
+}
+.sidebar a{
+    text-decoration: none;
+    background-color: red;
+    width: 150px;
+    height: 50px;
+    border-radius: 7px;
+    text-align: center;
+    color: white;
+    
+}
+.body{
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+   border: 2px solid red;
+   width: 100%;
+}
+.body .inputwala{
+    margin-top: 50px;
+    padding: 20px;
+    margin-left: 50px;
+}
+.cardwala{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr  ;
+    
+    
+   
+}
+.card{
+    width: 15rem;
+    height: 200px;
+   margin-left: 40px;
+   margin-top: 50px;
+}
+.inputwala{
+    width: 100%;
+    height:0px ;
+    margin-right: 35px;
+}
+.rating{
+    font-size: 25px;
+    /* margin-right: 170px; */
+}
+.part{
+    display: flex;
+}
+/* .button {
+    margin-right: 27px;
+} */
