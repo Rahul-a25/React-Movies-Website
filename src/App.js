@@ -1,18 +1,21 @@
 import './App.css';
+import { useContext } from 'react';
 import Login from './component/Login';
 import Navbar from './component/Navbar';
 import Home from './component/Home'
-import { Routes,Route,Navigate, useParams} from 'react-router-dom';
+import { Routes,Route,Navigate} from 'react-router-dom';
 import Allmovies from './component/movies/Allmovies';
 import Comedy from './component/movies/Comedy'
 import Drama from './component/movies/Drama'
 import Action from './component/movies/Action'
 import Moviesdetails from './component/movies/Moviesdetails';
+import { myContext } from './component/Context';
+import TopRated from './component/TopRated';
 
 
 
 function App() {
- let {e}=useParams()
+  const { login } = useContext(myContext);
   return (
 
     <div className="App">
@@ -21,16 +24,22 @@ function App() {
         <Routes>
       
         
+        {/* <Route path='' element={<> <Login/> </>}/> */}
+        {/* <Route path='/' element={login ? <Home /> : <Navbar />}/> */}
+        {/* <Route path='/' element={<Navigate to='/'/>}/> </Route> */}
+      <Route path='/' element={login ? <Home /> : <Login />}>
 
-      <Route path='/' element={ <Home/> }>
-      <Route path='' element={<Navigate to='allmovies'/>}/>
-      <Route path='allmovies' element={ <Allmovies/> }/>
-      <Route path='comedy' element={<> <Comedy/></> }/>
-      <Route path='action' element={<> <Action/></> }/>
-      <Route path='drama' element={<> <Drama/></> }/>
+      {/* <Route path='/' element={<Navigate to='allmovies'/>}/> */}
+      <Route path='/' element={<Navigate to='toprated'/>}/> 
+      <Route path='/toprated' element={login ? <TopRated/> : <Login /> }/>
+      <Route path='/allmovies' element={login ? <Allmovies/> : <Login /> }/>
+      <Route path='/comedy' element={login ? <Comedy/>: <Login />}/>
+      <Route path='/action' element={login ? <Action/>: <Login /> }/>
+      <Route path='/drama' element={login ?<Drama/>: <Login />}/>
+      
       </Route>
       
-      <Route path="/MoviedetailPage/:id" element={<> <Moviesdetails/></> }/>
+      <Route path="/MoviedetailPage/:id" element={login ? <Moviesdetails/>: <Login />}/>
     </Routes> 
 
       

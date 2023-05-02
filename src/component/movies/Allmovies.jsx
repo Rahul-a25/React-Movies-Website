@@ -84,8 +84,8 @@ value={search}
     <><div  className="maincard">
     <Link style={{color:"black",textDecoration:"none"}} to={`/MoviedetailPage/${e.id}`} >
         
-        <Card key={e.id} className='card' style={{  }}>
-      <Card.Img variant="top" width={250} height={250} src={IMGPATH + e.poster_path} />
+        <Card key={e.id} className='card mycard' style={{border:"none" ,backgroundColor:"#232425"  }}>
+      <Card.Img variant="top" width={250} height={300} style={{borderRadius:"10px"}} src={IMGPATH + e.poster_path} />
       <Card.Body style={{backgroundColor: '#232425'}}>
         <Card.Title style={{color:"white"}}>{e.original_title}</Card.Title>
         

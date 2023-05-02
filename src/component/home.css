@@ -60,6 +60,9 @@
     
    
 }
+.mycard{
+    border: none;
+}
 .card{
     width: 15rem;
     border: none;

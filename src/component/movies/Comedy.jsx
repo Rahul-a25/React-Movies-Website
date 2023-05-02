@@ -70,13 +70,13 @@ const getAllMovies = async () => {
     <>
     <Link style={{color:"black",textDecoration:"none"}} to={`/MoviedetailPage/${e.id}`} key={e.id}>
         <div className="maincard">
-        <Card  className='card' style={{  }}>
-      <Card.Img variant="top" width={250} height={250} src={IMGPATH + e.poster_path} />
-      <Card.Body>
-        <Card.Title>{e.original_title}</Card.Title>
+        <Card  className='card mycard' style={{border:"none" ,backgroundColor:"#232425"  }}>
+      <Card.Img variant="top" width={250} height={300} style={{borderRadius:"10px"}} src={IMGPATH + e.poster_path} />
+      <Card.Body style={{backgroundColor: '#232425'}}>
+        <Card.Title style={{color:"white"}}>{e.original_title}</Card.Title>
         
         <div className="part"><BsFillStarFill className='rating'/>&nbsp;&nbsp;&nbsp;&nbsp;
-        <Card.Text>{e.vote_average}</Card.Text>  </div> 
+        <Card.Text style={{fontSize:"20px",color:"white"}}>{e.vote_average}</Card.Text>  </div> 
         {/* <Button className='button' variant="primary">Go somewhere</Button> */}
       </Card.Body>
     </Card>   
