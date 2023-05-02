@@ -5,12 +5,14 @@ import '../home.css'
 import axios from 'axios';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
-import { FcRating } from "react-icons/fc";
+// import { FcRating } from "react-icons/fc";
+import { BsFillStarFill } from "react-icons/bs";
 import InputGroup from 'react-bootstrap/InputGroup';
 import { useContext, useState ,useEffect} from 'react';
 import { myContext } from '../Context';
+import { Link } from 'react-router-dom';
 const Allmovies = () => {
-    
+
     
     const [search,setSearch]=useState('')
     // const [ApiData,SetApiData]=useState([])
@@ -20,7 +22,7 @@ const Allmovies = () => {
   
     const url='https://api.themoviedb.org/3/movie/popular?api_key=242efbc4712f4c03c1e8c51afa2afe05&language=en-US&page=1';
   const SEARCHAPI =
-    "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
+    "https://api.themoviedb.org/3/search/movie?&api_key=242efbc4712f4c03c1e8c51afa2afe05&query=";
 
 const getAllMovies = async () => {
     try {
@@ -43,6 +45,7 @@ const getAllMovies = async () => {
     }
   };
   console.log(ApiData);
+  console.log(getSearchedMovies);
 
   useEffect(() => {
     if (search === "") {
@@ -53,7 +56,7 @@ const getAllMovies = async () => {
   }, [search]);
   return (
     <div>
-          <div className="body">
+          <div >
 
 {/* inputsection */}
 
@@ -78,18 +81,24 @@ value={search}
 
 {
    ApiData.map((e)=>(
-        <div className="maincard">
-        <Card  className='card' style={{  }}>
-      <Card.Img variant="top" width={250} height={250} src={IMGPATH + e.poster_path} />
-      <Card.Body>
-        <Card.Title>{e.original_title}</Card.Title>
+    <><div  className="maincard">
+    <Link style={{color:"black",textDecoration:"none"}} to={`/MoviedetailPage/${e.id}`} >
         
-        <div className="part"><FcRating className='rating'/>
-        <Card.Text>{e.vote_average}</Card.Text>  </div> 
+        <Card key={e.id} className='card' style={{  }}>
+      <Card.Img variant="top" width={250} height={250} src={IMGPATH + e.poster_path} />
+      <Card.Body style={{backgroundColor: '#232425'}}>
+        <Card.Title style={{color:"white"}}>{e.original_title}</Card.Title>
+        
+        <div className="part"><BsFillStarFill  className='rating'/>&nbsp;&nbsp;&nbsp;&nbsp;
+        <Card.Text style={{fontSize:"20px",color:"white"}}>{e.vote_average}</Card.Text>  </div> 
         {/* <Button className='button' variant="primary">Go somewhere</Button> */}
       </Card.Body>
     </Card>   
+    
+       
+        </Link>
         </div>
+        </>
     ))
 }
 </div>

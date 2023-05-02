@@ -9,44 +9,16 @@ import { FcRating } from "react-icons/fc";
 import InputGroup from 'react-bootstrap/InputGroup';
 import { useContext } from 'react';
 import { myContext } from './Context';
+// import { Navbar } from 'react-bootstrap';
+import Navbar from './Navbar';
 // import Form from 'react-bootstrap/Form';
 const Home = () => {
-//     const {SetApiData} =useContext(myContext)
-// //    const[ApiData,SetApiData]= useState([])
-//    const [search, setSearch] = useState("");
-//     useEffect(()=>{
-//         if (search === "") {
-//             getAllMovies();
-//           } else {
-//             getSearchedMovies();
-//           }
-//         }, [search]);
-    
-//     const SEARCHAPI =
-//     "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
 
-//     const url='https://api.themoviedb.org/3/movie/popular?api_key=242efbc4712f4c03c1e8c51afa2afe05&language=en-US&page=1';
-//     const getAllMovies = async () => {
-//         try {
-//           const response = await axios.get(url);
-    
-//           console.log(response.results);
-    
-//           SetApiData(response.results);
-//         } catch (err) {
-//           console.log(err.message);
-//         }
-//       };
-//       const getSearchedMovies = async () => {
-//         try {
-//           const response = await axios.get(SEARCHAPI + search);
-//           SetApiData(response.data.results);
-//         } catch (err) {
-//           console.log(err.message);
-//         }
-//       };
-//       const IMGPATH = "https://image.tmdb.org/t/p/w1280";
   return (
+    <>
+    <Navbar/>
+
+    {/* // navbar section? */}
     <div className='mainHome'>
 
         {/* sidebarsection */}
@@ -67,6 +39,7 @@ const Home = () => {
         
        
     </div>
+    </>
     
   )
 }

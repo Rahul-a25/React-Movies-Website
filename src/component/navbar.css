@@ -1,9 +1,10 @@
 .nav{
     width: 100%;
     display: flex;
-    background-color: black;
+    background-color: #0a0a0a;
     justify-content: space-between;
     align-items: center;
+    padding: 5px;
 }
 .nav .left {
     margin-left: 70px;
