@@ -9,11 +9,15 @@ function SendingContext({ children }) {
   const [SearchApi, setSearchApi] = useState([]);
   const [Email,SetEmail]=useState('')
   const [Password,SetPassword]=useState('')
-  const [login, setlogin] = useState(true);
+  const [login, setlogin] = useState(false);
+
+  const [search,setSearch]=useState('')
+    const [Rated,SetRated]=useState([])
+    const[Popular,SetPopular]=useState([])
   
 
   return (
-    <myContext.Provider value={{ login, setlogin,Email,SetEmail,Password,SetPassword,ApiData, SetApiData,getData,SetGetData,SearchApi,setSearchApi }}>
+    <myContext.Provider value={{search,setSearch,SetRated,Rated,Popular,SetPopular, login, setlogin,Email,SetEmail,Password,SetPassword,ApiData, SetApiData,getData,SetGetData,SearchApi,setSearchApi }}>
       {children}
     </myContext.Provider>
   );

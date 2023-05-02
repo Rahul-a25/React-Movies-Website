@@ -1,4 +1,4 @@
-import React, { useState ,useEffect} from 'react'
+import React, { useState ,useEffect, useContext} from 'react'
 import axios from 'axios';
 import Card from 'react-bootstrap/Card';
 import { BsFillStarFill } from "react-icons/bs";
@@ -6,22 +6,24 @@ import { Link } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import './home.css'
+import { myContext } from './Context';
 const TopRated = () => {
-    const [search,setSearch]=useState('')
-    const [Rated,SetRated]=useState([])
-    const[Popular,SetPopular]=useState([])
+    const {search,setSearch,Rated,SetRated,Popular,SetPopular}=useContext(myContext)
+    // const [search,setSearch]=useState('')
+    // const [Rated,SetRated]=useState([])
+    // const[Popular,SetPopular]=useState([])
 
     const SEARCHAPI =
     "https://api.themoviedb.org/3/search/movie?&api_key=242efbc4712f4c03c1e8c51afa2afe05&query=";
-    const getSearchedMovies = async () => {
-        try {
-          const response = await axios.get(SEARCHAPI + search);
-          SetRated(response.data.results);
-          SetPopular(response.data.results)
-        } catch (err) {
-          console.log(err.message);
-        }
-      };
+    // const getSearchedMovies = async () => {
+    //     try {
+    //       const response = await axios.get(SEARCHAPI + search);
+    //       SetRated(response.data.results);
+    //       SetPopular(response.data.results)
+    //     } catch (err) {
+    //       console.log(err.message);
+    //     }
+    //   };
     const IMGPATH = "https://image.tmdb.org/t/p/w1280";
     let API_key="&api_key=db95773a7fb212ba790d71f6adac0e7e";
     let base_url="https://api.themoviedb.org/3";
@@ -38,14 +40,22 @@ const TopRated = () => {
           console.log(err.message);
         }
       };
-
-      const getpopularMovies = async () => {
+ const getpopularMovies = async () => {
         try {
           const response = await axios.get(url2);
     
           console.log(response.data.results);
     
           SetPopular(response.data.results);
+        } catch (err) {
+          console.log(err.message);
+        }
+      };
+      const getSearchedMovies = async () => {
+        try {
+          const response = await axios.get(SEARCHAPI + search);
+          SetRated(response.data.results);
+          SetPopular(response.data.results)
         } catch (err) {
           console.log(err.message);
         }
@@ -58,6 +68,10 @@ const TopRated = () => {
           getSearchedMovies();
         }
       }, [search]);
+
+
+
+
 
     //   useEffect(() => {
       
@@ -74,7 +88,7 @@ const TopRated = () => {
    <div className="upper">
       <h1 style={{color:"white",fontSize:"50px",textAlign:"start",margin:"10px 20px"}}>TopRated</h1>
    </div>
-   <div >
+   {/* <div >
 <InputGroup className="mb-3 mt-50">
 <Form.Control
 onChange={(e) => setSearch(e.target.value)}
@@ -85,7 +99,7 @@ className="inputwala"
 value={search}
 />
 </InputGroup>
-</div> 
+</div>  */}
 {/* cardsection */}
 
 <div className="cardwala">

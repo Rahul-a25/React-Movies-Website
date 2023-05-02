@@ -64,7 +64,7 @@ const handleLogin = () => {
             });
           }} type="password" />
                 <p style={{marginLeft:"300px",color:"white"}}>Forget Password ?</p>
-                <button onClick={handleLogin} >Sign In</button>
+                <button className='btnwala' onClick={handleLogin} >Sign In</button>
                 <p style={{color:"white"}}>Don't have an Account?&nbsp;&nbsp;<span style={{color:"#ff4757"}}>Sign up</span></p>
            
             </div>

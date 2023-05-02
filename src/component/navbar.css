@@ -27,6 +27,30 @@
     text-decoration: none;
     color: white;
 }
+.maininput{
+    /* border: 2px solid red; */
+    margin-right: 500px;
+    /* padding: 10px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.maininput .inputwala{
+    border: 2px solid gray;
+    margin-right: 120px;
+    margin-top: 10px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: #232425;
+    color: white;
+    /* width: 300px; */
+}
+.logout .logoutmain{
+    background-color: aquamarine;
+
+}
 @media only screen and (max-width: 700px) and (min-width: 375px){
     .nav{
         width: 850px;

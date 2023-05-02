@@ -8,7 +8,7 @@ const Logout = () => {
     const {setlogin}=useContext(myContext)
     return (
         <>
-            <button className='out' style={{padding:"5px",width:"90px",borderRadius:"5px",marginTop:"-20px",fontSize:"17px"}} onClick={() => {
+            <button className='logoutwala' style={{padding:"5px",width:"90px",borderRadius:"5px",marginTop:"-20px",fontSize:"17px"}} onClick={() => {
             setlogin(false);
             navigate("/");
           }}>Logout</button>

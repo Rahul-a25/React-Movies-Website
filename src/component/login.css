@@ -57,7 +57,24 @@
     border: none;
     color: white;
     font-weight: 400;
+    transition: 0.9s;
 
+}
+.loginmain .rightlogin .rightwala button:hover{
+    background-color: #c82f3b;
+    cursor: pointer;
+    transform: scale(1.1);
+
+}
+.logoutwala{
+    background-color: rgb(1, 147, 147);
+    color: white;
+    font-weight: 600;
+    transition: 0.5s;
+}
+.logoutwala:hover{
+background-color: #ff4757;
+transform: scale(1.1);
 }
 /* .loginmain .rightlogin .rightwala input:hover{
     border: #ff4757;

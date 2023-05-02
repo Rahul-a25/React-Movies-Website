@@ -20,7 +20,7 @@ const Allmovies = () => {
     // const [search, setSearch] = useState("");
     const IMGPATH = "https://image.tmdb.org/t/p/w1280";
   
-    const url='https://api.themoviedb.org/3/movie/popular?api_key=242efbc4712f4c03c1e8c51afa2afe05&language=en-US&page=1';
+    const url='https://api.themoviedb.org/3/movie/popular?api_key=242efbc4712f4c03c1e8c51afa2afe05&language=en-US&page=300';
   const SEARCHAPI =
     "https://api.themoviedb.org/3/search/movie?&api_key=242efbc4712f4c03c1e8c51afa2afe05&query=";
 
